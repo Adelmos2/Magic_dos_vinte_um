@@ -1,0 +1,124 @@
+<meta charset="utf-8">
+
+<h1>"Muito bem! agora memorize uma carta e em seguida escreva apanas a fileira aonde ela está:<br />
+Por exemplo: se for na primeira escreva apenas (primeira), se for na segunda (segunda), <br />
+se for na terceira (terceira),
+agora clique no botão"</h1><br /><br />
+
+
+<input/>
+<button>Continue aqui</button>
+
+
+<script>
+
+function pulalinha() {
+
+document.write("<br />");
+document.write("<br />");
+}
+
+ function mostra(frase) {
+
+document.write(frase);
+pulalinha();
+}
+
+var colunaUmP  = " Primeira fileira [A &amp;diams;] [10 &amp;clubs;][7 &amp;hearts;][2 &amp;diams;][k &amp;hearts;] [4 &amp;diams;] [ J &amp;clubs;]"; 
+
+var colunaUmS = " Segunda fileira [J &amp;hearts; ][ 6 &amp;clubs;][7 &amp;diams;][ 2 &amp;hearts;][ 8 &amp;spades;][3 &amp;clubs;][ 5 &amp;hearts;]"; 
+
+var colunaUmT = " Terceira fileira [10 &amp;spades;] [6 &amp;spades;][A &amp;spades;][3 &amp;spades;][6 &amp;diams;][2 &amp;clubs;][ 4 &amp;clubs;]";
+
+
+var colunaUmPdois =  " Primeira fileira [J &amp;hearts;] [2 &amp;hearts;] [5 &amp;hearts;] [7 &amp;hearts;] [4 &amp;diams;] [6 &amp;spades;] [6 &amp;diams;]";
+
+var colunaUmSdois =  " Segunda fileira [6 &amp;clubs;] [8 &amp;spades;] [A &amp;diams;] [2 &amp;diams;] [J &amp;clubs;] [A &amp;ampspades];] [2 &amp;ampclubs];";
+
+var colunaUmTdois =  " Terceira fileira [7 &amp;ampdiams];] [3 &amp;ampclubs];] [10 &amp;ampclubs];] [K &amp;amphearts];] [10 &amp;ampspades];] [3 &amp;ampspades];] [4 &amp;ampclubs];]";
+
+
+var colunaUmPtres = " Primeira fileira [J &amp;amphearts];] [2 &ampharts];earts ] [5&ampharts];earts ] [7&ampharts];earts ] [4&ampharts];diams ] [6&ampharts];spades ] [6&ampharts];diams ]";
+
+var colunaUmStres = " Segunda fileira [6&ampharts];clubs ] [8&ampharts];spades ] [A&ampharts];diams ] [2&ampharts];diams ] [J&ampharts];clubs ] [A&ampharts];spades ] [2&ampharts];clubs ]";
+
+var colunaUmTtres = " Terceira fileira [7&ampharts];diams ] [3&ampharts];clubs ] [10&ampharts];clubs ] [K&ampharts];hearts ] [10&ampharts];spades ] [3&ampharts];spades ] [4&ampharts];clubs ]";
+
+
+var fase = prompt ("Escolha uma carta e memorize-a,quando estiver pronto digite [OK]");
+pulalinha()
+  
+
+ var segredo = "primeira";
+ var segredoDois ="segunda";
+ var segredoTres ="terceira";
+
+
+ var input = document.querySelector("input");
+ input.focus();
+ var button = document.querySelector("button");
+    button.onclick = verifica;
+
+
+  if (fase == "ok") {
+
+  mostra (colunaUmP);
+  mostra (colunaUmS);
+  mostra (colunaUmT);
+  
+}
+
+ 
+function verifica() {
+ 
+if(input.value == segredo) {
+        
+ mostra ("Muito bem! Agora localize sua carta, escreva em qual fileira ela se encontra agora:<br />na (primeira),(segunda) ou (terceira).<br />");
+    
+ let campo = document.createElement("input");
+ campo.name = "";
+ campo.placeholder = "";
+ document.body.appendChild(campo);
+
+ let botao = document.createElement("button");
+ botao.innerHTML = "Clique aqui!";
+ document.body.appendChild(botao);
+}
+  
+  if (input.value == segredo) {
+
+        mostra (colunaUmPdois);
+        mostra (colunaUmSdois);
+        mostra (colunaUmTdois);      
+}
+   
+  if(input.value == segredoDois) {
+        
+    mostra ("Você está indo muito bem! agora localize sua carta, esta é a ultima rodada: Escreva em qual fileira ela se encontra agora:<br />na (primeira),(segunda) ou (terceira).");
+    
+    let campo = document.createElement("input");
+    campo.name = "";
+    campo.placeholder = "";
+    document.body.appendChild(campo);
+
+    let botao = document.createElement("button");
+    botao.innerHTML = "Clique aqui!";
+    document.body.appendChild(botao);
+}
+    pulalinha();
+  
+if (input.value == segredoDois) {
+
+    mostra (colunaUmPtres);
+    mostra (colunaUmStres);
+    mostra (colunaUmTtres);   
+}
+ 
+        input.value = "";
+        input.focus();
+}
+
+    
+
+
+</script>
